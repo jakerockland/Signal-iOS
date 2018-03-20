@@ -18,6 +18,8 @@
 #import "NotificationsManager.h"
 #import "OWSAnyTouchGestureRecognizer.h"
 #import "OWSAudioPlayer.h"
+#import "OWSBackup.h"
+#import "OWSBackupIO.h"
 #import "OWSBezierPathView.h"
 #import "OWSCallNotificationsAdaptee.h"
 #import "OWSDatabaseMigration.h"
