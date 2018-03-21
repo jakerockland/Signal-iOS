@@ -861,9 +861,11 @@ NS_ASSUME_NONNULL_BEGIN
     OWSAssert(![activeRecordNames containsObject:self.manifestItem.recordName]);
     [activeRecordNames addObject:self.manifestItem.recordName];
 
-    // TODO: If we implement "lazy restores" where attachments (etc.) are
-    // restored lazily, we need to include the record names for all
+    // Because we do "lazy attachment restores", we need to include the record names for all
     // records that haven't been restored yet.
+    //
+    // TODO:
+    NSArray<NSString *> *recordNames = [OWSBackup.sharedManager attachmentRecordNamesForLazyRestore];
 
     __weak OWSBackupExportJob *weakSelf = self;
     [OWSBackupAPI fetchAllRecordNamesWithSuccess:^(NSArray<NSString *> *recordNames) {
